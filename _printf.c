@@ -22,9 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[cnt] == '%')
 		{
-			switch () {
-				case /* value */:
-			}
+
 		}
 
 		buffer[buffer_count] = format[cnt];
