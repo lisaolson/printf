@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-char *(*prog_get(char c))(va_list)
+char *(*prog_get(char *c))(va_list)
 {
         print_list prog_list[] = {
                 {"s", print_string},
@@ -11,7 +11,7 @@ char *(*prog_get(char c))(va_list)
 
         while (prog_list[i].spec != NULL)
         {
-                if (c == prog_list[i].spec[0])
+                if (c[0] == prog_list[i].spec[0])
                 {
                         return (prog_list[i].p);
                 }

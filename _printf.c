@@ -6,7 +6,7 @@
 int _printf(const char *format, ...)
 {
 	int cnt = 0, buffer_count = 0, str_len = 0, str_cnt = 0;
-	char c;
+	char *c;
 	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
 
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		if (format[cnt] == '%')
 		{
 			c = spec_get(format, cnt);
-			if (c != 0)
+			if (c != NULL)
 			{
 				str = (*prog_get(c))(list);
 				if (str != NULL)
