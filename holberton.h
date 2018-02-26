@@ -1,6 +1,8 @@
 #ifndef holberton_h
 #define holberton_h
 #include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 typedef struct _printfs {
 	char *spec;
@@ -8,9 +10,9 @@ typedef struct _printfs {
 } print_list;
 
 int _printf(const char *format, ...);
-char *_strcpy(char *dest, char *src);
+char *_strcpy(char *dest, char *src, int a);
 int _strlen(char *s);
-int spec_get(char *format, int i);
+char spec_get(const char *format, int i);
 int *prog_get(char *c);
 int print_string(va_list list,char *buffer, int a);
 int print_char(va_list list,char *buffer, int a);

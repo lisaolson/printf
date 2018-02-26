@@ -1,10 +1,10 @@
 #include "holberton.h"
 
-char *prog_get(char *c)
+int *prog_get(char *c)
 {
         print_list prog_list[] = {
                 {"s", print_string},
-                {"c", print_char}
+                {"c", print_char},
                 {NULL, NULL}
         };
         int i = 0;

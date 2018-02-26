@@ -1,7 +1,8 @@
 #include "holberton.h"
 
-int spec_get(char *format, int i)
+int spec_get(const char *format, int i)
 {
+        int cnt = 0;
         char x;
         for (cnt = 0; format[i + cnt] != '\0'; cnt++)
         {
