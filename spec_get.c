@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int spec_get(const char *format, int i)
+char spec_get(const char *format, int i)
 {
         int cnt = 0;
         char x;
