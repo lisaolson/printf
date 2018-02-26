@@ -18,16 +18,15 @@ int _printf(const char *format, ...)
 		if (format[cnt] == '%')
 		{
 			c = spec_get(format, cnt);
-			if (c == 0)
-				break;
-/*get rid of break and set conditional to not equal to and add the rest underneath inside the if*/
-			str = prog_get(c);
-			if (str == NULL)
-				break;
-/*get rid of break and set conditional to not equal to and add the rest underneath inside the if*/
-			str_len = prog_get(list, buffer, buffer_count)
-			buffer_count += str_len;
-			cnt += 2;
+			if (c != 0)
+			{
+				str = prog_get(c);
+				if (str != NULL)
+				{
+					str_len = str(list, buffer, buffer_count)
+					buffer_count += str_len;
+					cnt += 2;
+				}
 
 		}
 		buffer[buffer_count] = format[cnt];
