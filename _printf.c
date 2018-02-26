@@ -37,4 +37,5 @@ int _printf(const char *format, ...)
 	write(1, buffer, buffer_count);
 	va_end(list);
 	return (0);
+	}
 }
