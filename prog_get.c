@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-char *prog_get(char c)
+int *(*prog_get(char c))(char)
 {
         print_list prog_list[] = {
                 {"s", print_string},
