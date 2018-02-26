@@ -11,6 +11,6 @@ int print_string(va_list list,char *buffer, int a)
         if (s == NULL)
                 return(NULL);*/
         _strcpy(buffer, c, a);
-        free(s);
+        /*free(s);*/
         return (len);
 }
