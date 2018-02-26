@@ -7,7 +7,7 @@ int _printf(const char *format, ...)
 {
 	int cnt = 0, buffer_count = 0, str_len = 0;
 	char c;
-	int *str;
+	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
 
 	va_list list;
