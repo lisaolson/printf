@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 				str = (*prog_get(c))(list);
 				if (str != NULL)
 				{
-					str(list);
 					str_len = _strlen(str);
 					cnt += 2;
 					while (str[str_cnt] != '\0')
