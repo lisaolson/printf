@@ -5,15 +5,16 @@
 
 int _printf(const char *format, ...)
 {
-	int cnt = 0;
+	int cnt = 0, cnt2 = 0;
 	char *s;
-	buffer = malloc(1024 * sizeof(char));
+	char *buffer = malloc(1024 * sizeof(char));
 
 	va_list list;
 
 	print_list prog_list[] = {
 		{"s", print_string},
 		{"c", print_char}
+		{NULL, NULL}
 	};
 
 	va_start(list, format);
@@ -22,7 +23,13 @@ int _printf(const char *format, ...)
 	{
 		if (format[cnt] == '%')
 		{
-
+			while (prog_list[cnt2].spec != NULL)
+			{
+				if (prog_list[cnt2].spec[0] == format[cnt])
+				{
+					prog_list[cnt2].p(list);
+				}
+			}
 		}
 
 		buffer[buffer_count] = format[cnt];
