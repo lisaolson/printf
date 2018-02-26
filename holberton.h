@@ -7,7 +7,7 @@
 
 typedef struct _printfs {
 	char *spec;
-	char (*p)(va_list);
+	char *(*p)(va_list);
 } print_list;
 
 int _printf(const char *format, ...);
