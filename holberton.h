@@ -10,7 +10,7 @@ int _printf(const char *format, ...);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 int spec_get(char *format, int i);
-int (*prog_get(char *c))(va_list, char *, int);
+int *prog_get(char *c);
 int print_string(va_list list, *buffer, int a);
 int print_char(va_list list, *buffer, int a);
 
