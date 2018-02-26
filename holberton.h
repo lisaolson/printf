@@ -8,6 +8,10 @@ typedef struct _printfs {
 
 int _printf(const char *format, ...);
 char *_strcpy(char *dest, char *src);
-void *_calloc(unsigned int nmemb, unsigned int size);
+int _strlen(char *s);
+int spec_get(char *format, int i);
+int (*prog_get(char *c))(va_list, char *, int);
+int print_string(va_list list, *buffer, int a);
+int print_char(va_list list, *buffer, int a);
 
 #endif
