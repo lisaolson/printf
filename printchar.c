@@ -1,10 +1,10 @@
 #include "holberton.h"
 #include <stdlib.h>
 
-char print_char(va_list list)
+char *print_char(va_list list)
 {
         char *s;
-        char t;
+        char t = 0;
 
         s = malloc(2 * sizeof(char));
         if (s == NULL)
