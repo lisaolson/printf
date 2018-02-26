@@ -21,14 +21,18 @@ int _printf(const char *format, ...)
 			c = spec_get(format, cnt);
 			if (c != 0)
 			{
-				str = prog_get(c);
-				str_len = 0
-				cnt += 2;
-				while (str[str_len] != '\0')
+				str = (*prog_get(c))(list);
+				if (str != NULL)
 				{
-					buffer[buffer_count] = str[str_len];
-					buffer_count++;
-					str_len++;
+					str(list);
+					str_len = 0;
+					cnt += 2;
+					while (str[str_len] != '\0')
+					{
+						buffer[buffer_count] = str[str_len];
+						buffer_count++;
+						str_len++;
+					}
 				}
 
 		}
