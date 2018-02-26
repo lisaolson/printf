@@ -2,7 +2,7 @@
 
 int print_string(va_list list,char *buffer, int a)
 {
-        int tmp = 0, len = 0;
+        len = 0;
         char *c;
 
         c = va_arg(list, char *);
