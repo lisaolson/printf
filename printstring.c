@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int print_string(va_list list,char *buffer, int a)
+int *print_string(va_list list,char *buffer, int a)
 {
         int len = 0;
 
