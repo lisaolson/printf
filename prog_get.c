@@ -11,9 +11,9 @@ int *prog_get(char c)
 
         while (prog_list[i].spec != NULL)
         {
-                if (c == prog_list.spec[0])
+                if (c == prog_list[i].spec[0])
                 {
-                        return (prog_list.p);
+                        return (prog_list[i].p);
                 }
                 i++;
         }
