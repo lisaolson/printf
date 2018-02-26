@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 
-int print_char(va_list list,char *buffer, int a)
+char print_char(va_list list,char *buffer, int a)
 {
         char *s;
         char t;
@@ -13,7 +13,5 @@ int print_char(va_list list,char *buffer, int a)
         t = va_arg(list, int);
         s[0] = t;
         s[1] = '\0';
-        buffer[a] = s[0];
-        free(s);
-        return (1);
+        return (s);
 }

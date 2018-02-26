@@ -6,11 +6,11 @@
  * Return: dest array
  */
 
-char *_strcpy(char *dest, char *src, int a)
+char *_strcpy(char *dest, char *src)
 {
 	int count;
 
 	for (count = 0; src[count] != '\0'; count++)
-		dest[count + a] = src[count];
+		dest[count] = src[count];
 	return (dest);
 }

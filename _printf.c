@@ -5,7 +5,7 @@
 
 int _printf(const char *format, ...)
 {
-	int cnt = 0, buffer_count = 0, str_len = 0;
+	int cnt = 0, buffer_count = 0, str_len = 0, str_cnt;
 	char c;
 	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
@@ -22,11 +22,13 @@ int _printf(const char *format, ...)
 			if (c != 0)
 			{
 				str = prog_get(c);
-				if (str != NULL)
+				str_len = 0
+				cnt += 2;
+				while (str[str_len] != '\0')
 				{
-					str_len = str(list, buffer, buffer_count);
-					buffer_count += str_len;
-					cnt += 2;
+					buffer[buffer_count] = str[str_len];
+					buffer_count++;
+					str_len++;
 				}
 
 		}
@@ -36,6 +38,6 @@ int _printf(const char *format, ...)
 	}
 	write(1, buffer, buffer_count);
 	va_end(list);
-	return (0);
+	return (buffer_count);
 	}
 }
