@@ -1,5 +1,6 @@
 #ifndef holberton_h
 #define holberton_h
+#include <stdarg.h>
 
 typedef struct _printfs {
 	char *spec;
