@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (format[cnt] == '%')
 		{
 			z = spec_get(format, cnt);
-			temp = prog_get(format[cnt + 1]);
+			temp = prog_get(z);
 			if (temp == NULL)
 				return (-1);
 			str = temp(list);
