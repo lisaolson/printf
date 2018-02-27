@@ -5,7 +5,7 @@
 
 int _printf(const char *format, ...)
 {
-	int cnt = 0, total = 0, spaces = 0;
+	int cnt = 0, total = 0, spaces = 0, total1 = 0;
 	char z;
 	va_list list;
 
@@ -21,21 +21,22 @@ int _printf(const char *format, ...)
 		else if (format[cnt] == '%' && format[cnt + 1] == '%')
 		{
 			_putchar(format[cnt + 1]);
-			total++;
+			total+= 2;
 			cnt += 2;
 		}
 		else if (format[cnt] == '%')
 		{
 			z = spec_get(format, cnt);
-			total = prog_get(z, list);
+			total1 = prog_get(z, list);
 			if (total == 0)
 			{
 				_putchar(format[cnt]);
 				_putchar(format[cnt + 1]);
 			}
+			total = total1 + total;
 			spaces = count_spaces(format, cnt);
 			cnt += (spaces + 2);
-			total += total;
+			total++;
 		}
 		else
 		{
@@ -46,5 +47,5 @@ int _printf(const char *format, ...)
 
 	}
 	va_end(list);
-	return (cnt);
+	return (total);
 }

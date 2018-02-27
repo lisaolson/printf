@@ -13,5 +13,7 @@ int print_char(va_list list)
 	ch = va_arg(list, int);
 	_putchar(ch);
 
+	if (ch == 0)
+		return (0);
         return (1);
 }

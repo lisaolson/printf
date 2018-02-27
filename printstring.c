@@ -12,8 +12,10 @@ int print_string(va_list *list)
 
 	c = va_arg(list, char *);
 	if (c == NULL)
+	{
 		c = "(null)";
-
+		return (4);
+	}
 	for (cnt = 0; c[cnt] != '\0'; cnt++)
 		_putchar(c[cnt]);
 	return (cnt);
