@@ -6,14 +6,16 @@
 int _printf(const char *format, ...)
 {
 	int cnt = 0, buffer_count = 0, str_cnt = 0;
-	char *c;
-	char *str;
-	char *buffer = malloc(1024 * sizeof(char));
-
+	char *c = NULL;
+	char *str = NULL;
+	char buffer[BUFFER];
 	va_list list;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	va_start(list, format);
-
 	while (format[cnt] != '\0')
 	{
 		if (format[cnt] == '%')
