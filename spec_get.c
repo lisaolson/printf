@@ -7,7 +7,7 @@ char *spec_get(const char *format, int i)
         char *tmp;
 
         tmp = malloc(sizeof(char) * 2);
-        if (tmp = NULL || format == NULL)
+        if (tmp == NULL || format == NULL)
                 return (NULL);
         for (cnt = 0; format[i + cnt] != '\0'; cnt++)
         {
@@ -16,7 +16,8 @@ char *spec_get(const char *format, int i)
                         x = format[i + cnt];
                         tmp[0] = x;
                         tmp[1] = '\0';
-                        return (tmp);
+                        break;
                 }
         }
+return (tmp);
 }

@@ -14,7 +14,7 @@ int _printf(const char *format, ...);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 char *spec_get(const char *format, int i);
-char *(*prog_get(char c))(va_list);
+char *(*prog_get(char *c))(va_list);
 char *print_string(va_list list);
 char *print_char(va_list list);
 
