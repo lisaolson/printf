@@ -5,12 +5,16 @@
  * Return: return string
  */
 
-char *print_string(va_list *list)
+int print_string(va_list *list)
 {
 	char *c;
+	int cnt = 0;
 
 	c = va_arg(list, char *);
 	if (c == NULL)
-		return ("(null)");
-	return (c);
+		c = "(null)";
+
+	for (cnt = 0; c[cnt] != '\0'; cnt++)
+		_putchar(c[cnt]);
+	return (cnt);
 }

@@ -5,15 +5,17 @@
  * Return: returns a str and null
  */
 
-char *print_int(va_list list)
+int print_int(va_list list)
 {
 	int a, b, res, tmp, exp, cnt;
-	char *str;
 
 	a = va_arg(list, int);
 	cnt = b = 0;
 	exp = 1;
-	a >= 0 ? (res = a * -1) : (res = a, cnt++);
+	if (a >= 0)
+		(res = a * -1);
+	else
+		(res = a, cnt++);
 	tmp = res;
 	while (tmp <= -10)
 	{
@@ -21,15 +23,12 @@ char *print_int(va_list list)
 		tmp /= 10;
 		cnt++;
 	}
-	str = malloc((cnt + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
 	if (a < 0)
-		str[b++] = '-';
+		_putchar('-');
 	while (exp >= 1)
 	{
-		str[b++] = (((res / exp) % 10) * -1 + '0');
+		_putchar((((res / exp) % 10) * -1 + '0'));
 		exp /= 10;
 	}
-return (str);
+	return (cnt + 1);
 }

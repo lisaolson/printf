@@ -6,13 +6,12 @@
  * Return: string with character
  */
 
-char *print_char(va_list list)
+int print_char(va_list list)
 {
-	char s[2];
-	char *p;
+	char ch;
 
-	p = s;
-	s[0] = va_arg(list, int);
-	s[1] = '\0';
-	return (p);
+	ch = va_arg(list, int);
+	_putchar(ch);
+
+        return (1);
 }

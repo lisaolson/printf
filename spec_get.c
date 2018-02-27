@@ -19,7 +19,5 @@ char spec_get(const char *format, int i)
 			break;
 		}
 	}
-	if (format[i + cnt] == '\0')
-		x = '\0';
 	return (x);
 }

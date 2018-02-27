@@ -14,16 +14,17 @@
 typedef struct _printfs
 {
 	char *spec;
-	char *(*p)();
+	int (*p)();
 } print_list;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
 char spec_get(const char *format, int i);
-char *(*prog_get(char c))(va_list);
-char *print_string(va_list *list);
-char *print_int(va_list list);
-char *print_char(va_list list);
+int prog_get(char c, va_list list);
+int print_string(va_list *list);
+int print_binary(va_list list);
+int count_spaces(const char *format, int index);
+int print_int(va_list list);
+int print_char(va_list list);
 
 #endif
