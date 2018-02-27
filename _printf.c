@@ -1,4 +1,7 @@
 #include "holberton.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 int _printf(const char *format, ...)
 {
@@ -6,9 +9,11 @@ int _printf(const char *format, ...)
 	char *c;
 	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
+
 	va_list list;
 
 	va_start(list, format);
+
 	while (format[cnt] != '\0')
 	{
 		if (format[cnt] == '%')
@@ -29,8 +34,6 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		if (c == NULL || str == NULL)
-			return(-1);
 		buffer[buffer_count] = format[cnt];
 		buffer_count++;
 		cnt++;
