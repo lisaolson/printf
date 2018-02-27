@@ -4,9 +4,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-
 #define BUFFER 1024;
-typedef struct _printfs {
+
+/**
+ * struct _printfs - structure for print_list
+ * @spec: character pointer
+ * @p: function pointer
+*/
+typedef struct _printfs
+{
 	char *spec;
 	char *(*p)(va_list);
 } print_list;
