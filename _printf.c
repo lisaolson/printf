@@ -2,7 +2,7 @@
 
 int _printf(const char *format, ...)
 {
-	int cnt = 0, buffer_count = 0, str_cnt = 0, specs_len = 0;
+	int cnt = 0, buffer_count = 0, str_cnt = 0;
 	char *c;
 	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
