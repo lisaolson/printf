@@ -3,9 +3,10 @@
 int spec_len(const char *format, int i)
 {
         int cnt;
-        for (cnt = 1; format[i + cnt] != " "; cnt++)
-        {
+        char * space;
+
+        space = " ";
+        for (cnt = 1; format[i + cnt] != space[0]; cnt++)
                 ;
-        }
         return (cnt - 1);
 }
