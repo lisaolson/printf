@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 				if (str != NULL)
 				{
 					specs_len = spec_len(format, cnt);
-					cnt += specs_len + 2;
+					cnt += (specs_len + 2);
 					while (str[str_cnt] != '\0')
 					{
 						buffer[buffer_count] = str[str_cnt];
