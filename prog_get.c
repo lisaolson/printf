@@ -5,7 +5,7 @@
  * Return: function pointer or null
  */
 
-int prog_get(char c, va_list list)
+int prog_get(char c, va_list list, const char* format, int cnt)
 {
 	print_list prog_list[] = {
 		{"s", print_string},
@@ -26,6 +26,10 @@ int prog_get(char c, va_list list)
 		i++;
 	}
 	if (prog_list[i].spec == '\0')
-		return (0);
+	{
+				_putchar(format[cnt]);
+				_putchar(format[cnt + 1]);
+				return(2);
+	}
 	return (0);
 }

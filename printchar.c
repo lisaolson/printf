@@ -14,6 +14,6 @@ int print_char(va_list list)
 	_putchar(ch);
 
 	if (ch == 0)
-		return (0);
+		return (1);
         return (1);
 }

@@ -21,22 +21,16 @@ int _printf(const char *format, ...)
 		else if (format[cnt] == '%' && format[cnt + 1] == '%')
 		{
 			_putchar(format[cnt + 1]);
-			total+= 2;
+			total+= 1;
 			cnt += 2;
 		}
 		else if (format[cnt] == '%')
 		{
 			z = spec_get(format, cnt);
-			total1 = prog_get(z, list);
-			if (total == 0)
-			{
-				_putchar(format[cnt]);
-				_putchar(format[cnt + 1]);
-			}
+			total1 = prog_get(z, list, format, cnt);
 			total = total1 + total;
 			spaces = count_spaces(format, cnt);
 			cnt += (spaces + 2);
-			total++;
 		}
 		else
 		{
