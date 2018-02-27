@@ -6,9 +6,10 @@
 int _printf(const char *format, ...)
 {
 	int cnt = 0, buffer_count = 0, str_cnt = 0;
-	char *c = NULL;
 	char *str = NULL;
 	char buffer[BUFFER];
+	char z;
+	char *(*temp)(va_list);
 	va_list list;
 
 	if (format == NULL)
@@ -20,28 +21,27 @@ int _printf(const char *format, ...)
 	{
 		if (format[cnt] == '%')
 		{
-			c = spec_get(format, cnt);
-			if (c != NULL)
+			z = spec_get(format, cnt);
+			temp = prog_get(format[cnt + 1]);
+			if (temp == NULL)
+				return (-1);
+			str = temp(list);
+
+			cnt += 2;
+			while (str[str_cnt] != '\0')
 			{
-				str = (*prog_get(c))(list);
-				if (str != NULL)
-				{
-					cnt += 2;
-					while (str[str_cnt] != '\0')
-					{
-						buffer[buffer_count] = str[str_cnt];
-						buffer_count++;
-						str_cnt++;
-					}
-				}
+				buffer[buffer_count] = str[str_cnt];
+				buffer_count++;
+				str_cnt++;
 			}
+
 		}
 		buffer[buffer_count] = format[cnt];
 		buffer_count++;
 		cnt++;
 	}
-buffer[buffer_count] = '\0';
-write(1, buffer, buffer_count);
-va_end(list);
-return (buffer_count);
+	buffer[buffer_count] = '\0';
+	write(1, buffer, buffer_count);
+	va_end(list);
+	return (buffer_count);
 }
