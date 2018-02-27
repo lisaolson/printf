@@ -1,19 +1,14 @@
 #include "holberton.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
 
 int _printf(const char *format, ...)
 {
-	int cnt = 0, buffer_count = 0, str_cnt = 0;
+	int cnt = 0, buffer_count = 0, str_cnt = 0, specs_len = 0;
 	char *c;
 	char *str;
 	char *buffer = malloc(1024 * sizeof(char));
-
 	va_list list;
 
 	va_start(list, format);
-
 	while (format[cnt] != '\0')
 	{
 		if (format[cnt] == '%')
@@ -24,7 +19,8 @@ int _printf(const char *format, ...)
 				str = (*prog_get(c))(list);
 				if (str != NULL)
 				{
-					cnt += 2;
+					specs_len = spec_len(format, cnt);
+					cnt += specs_len;
 					while (str[str_cnt] != '\0')
 					{
 						buffer[buffer_count] = str[str_cnt];
@@ -34,6 +30,8 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
+		if (c == NULL || str == NULL)
+			return(-1);
 		buffer[buffer_count] = format[cnt];
 		buffer_count++;
 		cnt++;
