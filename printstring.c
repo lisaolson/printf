@@ -3,7 +3,6 @@
 char *print_string(va_list list)
 {
         int len = 0;
-
         char *c;
         char *s;
 
