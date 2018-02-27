@@ -28,6 +28,7 @@ int _printf(const char *format, ...)
 			str = temp(list);
 
 			cnt += 2;
+			str_cnt = 0;
 			while (str[str_cnt] != '\0')
 			{
 				buffer[buffer_count] = str[str_cnt];
