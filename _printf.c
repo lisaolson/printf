@@ -37,8 +37,6 @@ int _printf(const char *format, ...)
 		buffer[buffer_count] = format[cnt];
 		buffer_count++;
 		cnt++;
-		free(c);
-		free(str);
 	}
 buffer[buffer_count] = '\0';
 write(1, buffer, buffer_count);
