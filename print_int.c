@@ -1,8 +1,13 @@
 #include "holberton.h"
+/**
+ * print_int - prints int
+ * @list: inputs va_list
+ * Return: returns a str and null
+ */
 
 char *print_int(va_list list)
 {
-int a, b, res, tmp, exp, cnt;
+	int a, b, res, tmp, exp, cnt;
 	char *str;
 
 	a = va_arg(list, int);
