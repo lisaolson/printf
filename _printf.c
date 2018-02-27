@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 				str = (*prog_get(c))(list);
 				if (str != NULL)
 				{
+					cnt += 2;
 					while (str[str_cnt] != '\0')
 					{
 						buffer[buffer_count] = str[str_cnt];
@@ -30,8 +31,6 @@ int _printf(const char *format, ...)
 		}
 		if (c == NULL || str == NULL)
 			return(-1);
-		specs_len = spec_len(format, cnt);
-		cnt += (specs_len + 2);
 		buffer[buffer_count] = format[cnt];
 		buffer_count++;
 		cnt++;
