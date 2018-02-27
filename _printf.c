@@ -33,15 +33,14 @@ int _printf(const char *format, ...)
 						str_len++;
 					}
 				}
-
 			}
-			buffer[buffer_count] = format[cnt];
-			buffer_count++;
-			cnt++;
 		}
-	buffer[buffer_count] = '\0';
-	write(1, buffer, buffer_count);
-	va_end(list);
+		buffer[buffer_count] = format[cnt];
+		buffer_count++;
+		cnt++;
 	}
+buffer[buffer_count] = '\0';
+write(1, buffer, buffer_count);
+va_end(list);
 return (buffer_count);
 }
