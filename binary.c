@@ -11,6 +11,11 @@ int print_binary(va_list list)
 	unsigned int num = va_arg(list, unsigned int);
 	unsigned int temp = num;
 
+	if (num == 0)
+	{
+		_putchar( 0 + '0');
+		return (1);
+	}
 	while (num / 2 != 0)
 	{
 		num /= 2;
@@ -23,7 +28,7 @@ int print_binary(va_list list)
 		hold[cnt] = temp % 2;
 		temp /= 2;
 	}
-	for (cnt = count - 1; cnt >= 0; cnt--)
+	for (cnt = count; cnt >= 0; cnt--)
 	{
 		_putchar(hold[cnt] + '0');
 	}
