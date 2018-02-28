@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
  * rev_string - reverses the string
- * @s: input string
+ * @list: input va_list
+ * Return: total number of string length
  */
 
 int rev_string(va_list list)
@@ -19,9 +20,9 @@ int rev_string(va_list list)
 	{
 		tmp3[cnt] = s[cnt];
 	}
-	count = count - 1; 
+	count = count - 1;
 	counter = count;
-	
+
 	for (rev = 0; rev < count; rev++)
 	{
 		tmp2 = tmp3[rev];
