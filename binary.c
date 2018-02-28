@@ -28,7 +28,7 @@ int print_binary(va_list list)
 		hold[cnt] = temp % 2;
 		temp /= 2;
 	}
-	for (cnt = count; cnt >= 0; cnt--)
+	for (cnt = count - 1; cnt >= 0; cnt--)
 	{
 		_putchar(hold[cnt] + '0');
 	}
