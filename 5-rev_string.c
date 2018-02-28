@@ -4,26 +4,37 @@
  * @s: input string
  */
 
-void rev_string(va_list list)
+int rev_string(va_list list)
 {
-	int count = 0, rev = 0, counter = 0;
+	int count = 0, rev = 0, counter = 0, cnt = 0;
 	char tmp, tmp2;
-	char *s;
+	char *s, *tmp3;
 
 	s = va_arg(list, char *);
 	for (count = 0; s[count] != '\0'; count++)
 		;
-	count = count - 1;
+	tmp3 = malloc(sizeof(char) * count);
+
+	for (cnt = 0; cnt < count; cnt++)
+	{
+		tmp3[cnt] = s[cnt];
+	}
+	count = count - 1; 
 	counter = count;
 	
 	for (rev = 0; rev < count; rev++)
 	{
-		tmp2 = s[rev];
-		tmp = s[count];
-		s[count] = tmp2;
-		s[rev] = tmp;
-		_putchar(s[rev]);
+		tmp2 = tmp3[rev];
+		tmp = tmp3[count];
+		tmp3[count] = tmp2;
+		tmp3[rev] = tmp;
 		count--;
 	}
+
+	for (cnt = 0; tmp3[cnt] != '\0'; cnt++)
+	{
+		_putchar(tmp3[cnt]);
+	}
+	free(tmp3);
 	return (counter);
 }
