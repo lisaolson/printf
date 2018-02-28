@@ -20,7 +20,9 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format[cnt] != '\0')
 	{
-		if (format[cnt] == '%' && format[cnt + 1] == '%')
+		if (format[cnt] == '%' && format[cnt + 1] == '\0')
+			return (-1);
+		else if (format[cnt] == '%' && format[cnt + 1] == '%')
 		{
 			_putchar(format[cnt + 1]);
 			total += 1;
