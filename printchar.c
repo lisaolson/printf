@@ -15,5 +15,5 @@ int print_char(va_list list)
 
 	if (ch == 0)
 		return (1);
-        return (1);
+	return (1);
 }
