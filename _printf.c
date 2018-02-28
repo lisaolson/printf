@@ -2,7 +2,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
+/**
+ * _printf - custom printf
+ * @format: input format
+ * Return: total length of string printed
+ */
 int _printf(const char *format, ...)
 {
 	int cnt = 0, total = 0, spaces = 0, total1 = 0;
@@ -21,7 +25,7 @@ int _printf(const char *format, ...)
 		else if (format[cnt] == '%' && format[cnt + 1] == '%')
 		{
 			_putchar(format[cnt + 1]);
-			total+= 1;
+			total += 1;
 			cnt += 2;
 		}
 		else if (format[cnt] == '%')
