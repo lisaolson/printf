@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+* print_binary - prints binary
+* @list: input va_list
+* Return: length of number
+*/
 int print_binary(va_list list)
 {
 	int count = 0, cnt;
