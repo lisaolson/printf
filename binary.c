@@ -23,6 +23,11 @@ int print_binary(va_list list)
 	};
 	count++;
 	hold = malloc(count * sizeof(unsigned int));
+	if (hold == NULL)
+	{
+		free(hold);
+		return (0);
+	}
 	for (cnt = 0; cnt < count; cnt++)
 	{
 		hold[cnt] = temp % 2;
