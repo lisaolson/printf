@@ -48,9 +48,6 @@ The \fIconst char *\fR argument is expected to be a pointer to an array of chara
 A '%' is written. No argument is converted.  The complete conversion specifications i '%%'.
 .RE
 
-.SH CONFORMING TO
-The _printf() function conforms to C89 and C99.
-
 .SH NOTES
 Currently, the program doesn't account for flags, fields, precision, or length modifiers.
 
