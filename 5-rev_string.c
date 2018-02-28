@@ -7,7 +7,7 @@
 
 int rev_string(va_list list)
 {
-	int rev = 0, cnt = 0;
+	int cnt = 0;
 	char *s;
 
 	s = va_arg(list, char *);
@@ -18,9 +18,9 @@ int rev_string(va_list list)
 	}
 	cnt = cnt - 1;
 
-	for (rev = cnt; rev >= 0; rev--)
+	for (; cnt >= 0; cnt--)
 	{
-		_putchar(s[rev]);
+		_putchar(s[cnt]);
 	}
 
 	return (cnt);
