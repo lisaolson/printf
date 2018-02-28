@@ -13,7 +13,7 @@ int print_binary(va_list list)
 
 	if (num == 0)
 	{
-		_putchar( 0 + '0');
+		_putchar(0 + '0');
 		return (1);
 	}
 	while (num / 2 != 0)
