@@ -16,8 +16,8 @@ int print_binary(va_list list)
 		num /= 2;
 		count++;
 	}
-	count += 2;
-	hold = malloc(count * sizeof(int) + 1);
+	count ++;
+	hold = malloc(count * sizeof(int));
 	for (cnt = 0; cnt <= count; cnt++)
 		hold[cnt] = 0;
 	for (cnt = 0; cnt <= count; cnt++)
