@@ -18,6 +18,11 @@ char spec_get(const char *format, int i)
 			x = format[i + cnt];
 			break;
 		}
+		if (format[i + cnt] == 'R')
+		{
+			x = 'R';
+			break;
+		}
 	}
 	return (x);
 }
