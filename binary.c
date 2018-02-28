@@ -20,9 +20,9 @@ int print_binary(va_list list)
 	{
 		num /= 2;
 		count++;
-	}
+	};
 	count++;
-	hold = malloc(count * sizeof(int));
+	hold = malloc(count * sizeof(unsigned int));
 	for (cnt = 0; cnt < count; cnt++)
 	{
 		hold[cnt] = temp % 2;
