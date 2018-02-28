@@ -16,6 +16,7 @@ int prog_get(char c, va_list list, const char *format, int cnt)
 		{"d", print_int},
 		{"i", print_int},
 		{"b", print_binary},
+		{"r", rev_string},
 		{'\0', NULL}
 	};
 	int i = 0;

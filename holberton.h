@@ -23,6 +23,7 @@ char spec_get(const char *format, int i);
 int prog_get(char c, va_list list, const char *format, int cnt);
 int print_string(va_list *list);
 int print_binary(va_list list);
+void rev_string(va_list list);
 int count_spaces(const char *format, int index);
 int print_int(va_list list);
 int print_char(va_list list);
